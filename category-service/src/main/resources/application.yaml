@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: category-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/category_services_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Navaf@7780
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8084
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 2GB
+      max-request-size: 2GB
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+file:
+  upload-dir: ./uploads
+azure:
+  storage:
+    account-name: netstarclient
+    sas-token: sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2031-01-31T03:28:37Z&st=2026-03-11T19:13:37Z&spr=https,http&sig=bNxbHRaH3uP%2F0fzhzA0Xw%2BaSnD4p32%2FRBTodBa581QE%3D
+    blob-endpoint: https://netstarclaimtec1.blob.core.windows.net
+    container-name: netstarcontainer

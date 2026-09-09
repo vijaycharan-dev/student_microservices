@@ -1,0 +1,40 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/august_auth_db
+    username: root
+    password: Vijay#2526
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+app:
+  jwt:
+    secret: TestJwtKeyForHMACSHA256_1234567890abcdefghijklmnopqrs
+
+email:
+  host: smtp.gmail.com
+  port: 587
+  username: vijay@gmail.com
+  password: vijay12
+  protocal: smtp
+  debug: true
+
+
+
+
